@@ -1,0 +1,2602 @@
+#LeftSideNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  z-index: 1000;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+#LeftSideNav .LeftSideNavMenuBox {
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .LeftSideNavTop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .LeftSideNavTop .Logo {
+  width: 150px;
+  height: 100px;
+  transition: all 0.3s ease;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .LeftSideNavTop .Logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter {
+  width: 100%;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter .LeftSideNavMenu {
+  width: 100%;
+  padding: 0 20px;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter .LeftSideNavMenu p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: myFont1;
+  text-transform: uppercase;
+  color: #555;
+  transition: opacity 0.3s ease;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  list-style: none;
+  gap: 5px;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li {
+  width: 100%;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #000;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a svg {
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: myFont1;
+  transition: opacity 0.3s ease;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a:hover svg,
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a:hover p {
+  color: #fff;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a.active {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a.active svg,
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavTopCenterBox .leftSideNavCenter ul li a.active p {
+  color: #fff;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  border-top: 1px solid #ddd;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul {
+  width: 100%;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li svg {
+  font-size: 20px;
+  color: #000;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li p {
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+  font-family: myFont1;
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li:hover {
+  background: var(--primaryColor);
+}
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li:hover svg,
+#LeftSideNav .LeftSideNavMenuBox .LeftSideNavBottomBox ul li:hover p {
+  color: #fff;
+}
+#LeftSideNav.collapsed {
+  width: 80px;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox {
+  align-items: center;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox .LeftSideNavTop .Logo {
+  width: 50px;
+  height: 50px;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox .LeftSideNavMenu p {
+  opacity: 0;
+  visibility: hidden;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox ul {
+  padding: 10px;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox ul li {
+  justify-content: center;
+  gap: 0;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox ul li a {
+  justify-content: center;
+  gap: 0;
+  padding: 12px 0;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavTopCenterBox ul li a p {
+  opacity: 0;
+  max-width: 0;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavBottomBox {
+  justify-content: center;
+  padding: 15px 0;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavBottomBox ul li {
+  justify-content: center;
+}
+#LeftSideNav.collapsed .LeftSideNavMenuBox .LeftSideNavBottomBox ul li p {
+  display: none;
+}
+
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+}
+.admin-dashboard .main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+.admin-dashboard .content-area {
+  margin: 20px;
+}
+.admin-dashboard.collapsed .main-content {
+  margin-left: 80px;
+}
+
+#Nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+#Nav .NavMain {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Right side: icons + profile */
+}
+#Nav .NavMain .ProfileSideNavBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#Nav .NavMain .ProfileSideNavBox .ToggleMenuBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#Nav .NavMain .ProfileSideNavBox .ToggleMenuBox svg {
+  font-size: 22px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#Nav .NavMain .ProfileSideNavBox .ToggleMenuBox:hover {
+  background: var(--primaryColor);
+}
+#Nav .NavMain .ProfileSideNavBox .ToggleMenuBox:hover svg {
+  color: #fff;
+  transform: scale(1.1);
+}
+#Nav .NavMain .ProfileSideNavBox .SideNavPageNameBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+#Nav .NavMain .NavProfileBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Nav .NavMain .NavProfileBox .NotifiSettingBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .NotificationBox,
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .SettingsBox {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .NotificationBox svg,
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .SettingsBox svg {
+  color: #555;
+  font-size: 18px;
+}
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .NotificationBox:hover,
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .SettingsBox:hover {
+  background: var(--primaryColor);
+}
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .NotificationBox:hover svg,
+#Nav .NavMain .NavProfileBox .NotifiSettingBox .SettingsBox:hover svg {
+  color: #fff;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox .ProfileImgBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox .ProfileImgBox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox .NameBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox .NameBox p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+  font-family: myFont1;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox .NameBox svg {
+  font-size: 20px;
+  color: #222;
+  transition: transform 0.3s ease;
+}
+#Nav .NavMain .NavProfileBox .ProfileImgNameBox:hover .NameBox svg {
+  transform: rotate(180deg);
+}
+
+#Dashboard {
+  width: 100%;
+}
+#Dashboard .DashboardMain {
+  width: 100%;
+}
+#Dashboard .DashboardMain .DashboardBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+#Dashboard .DashboardMain .DashboardBox .Box {
+  width: calc(33.3333333333% - 10px);
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+#Dashboard .DashboardMain .DashboardBox .Box .IconBox {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  background: #d1f5e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Dashboard .DashboardMain .DashboardBox .Box .IconBox svg {
+  color: var(--primaryColor);
+  font-size: 22px;
+}
+#Dashboard .DashboardMain .DashboardBox .Box .TitleBox p {
+  font-size: 16px;
+  font-family: myFont1;
+  font-weight: 500;
+  color: #000;
+}
+#Dashboard .DashboardMain .TableBox {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+#Dashboard .DashboardMain .TableBox .SearchDateFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .SearchBox {
+  width: 250px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .SearchBox .SearchIcon {
+  color: #000;
+  font-size: 18px;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .SearchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  width: 100%;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .FilterIconBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .FilterIconBox:hover {
+  background: var(--primaryColor);
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .FilterIconBox:hover svg {
+  color: #fff;
+}
+#Dashboard .DashboardMain .TableBox .SearchBoxFilter .FilterIconBox svg {
+  color: #000;
+  font-size: 18px;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox,
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateToBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox p,
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateToBox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow,
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow input,
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+}
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow svg,
+#Dashboard .DashboardMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow svg {
+  color: #000;
+}
+#Dashboard .DashboardMain .TableBox table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px 10px 0px 0px;
+}
+#Dashboard .DashboardMain .TableBox table th,
+#Dashboard .DashboardMain .TableBox table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  border-bottom: 1px solid #eee;
+}
+#Dashboard .DashboardMain .TableBox table th {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#Dashboard .DashboardMain .TableBox table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#Dashboard .DashboardMain .TableBox table .ActionIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Dashboard .DashboardMain .TableBox table .ActionIcons .edit {
+  color: green;
+  cursor: pointer;
+}
+#Dashboard .DashboardMain .TableBox table .ActionIcons .delete {
+  color: red;
+  cursor: pointer;
+}
+#Dashboard .DashboardMain .TableBox table .ActionIcons .view {
+  color: blue;
+  cursor: pointer;
+}
+#Dashboard .DashboardMain .TableBox table .NoDataRow td {
+  text-align: center;
+}
+#Dashboard .DashboardMain .TableBox table .NoDataBox {
+  padding: 20px 0;
+}
+#Dashboard .DashboardMain .TableBox table .NoDataBox img {
+  width: 250px;
+  height: 250px;
+}
+#Dashboard .DashboardMain .TableBox table .NoDataBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  font-family: myFont1;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox p {
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount svg {
+  color: #000;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 80px;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount .PaginationNumber {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span:hover, #Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span.active {
+  color: var(--primaryColor);
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount button {
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Dashboard .DashboardMain .TableBox .PaginationBox .PaginationCount button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  #Dashboard .DashboardMain .DashboardBox .Box {
+    width: calc(50% - 10px);
+  }
+  #Dashboard .DashboardMain .SearchBoxFilter .SearchBox {
+    width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  #Dashboard .DashboardMain .DashboardBox .Box {
+    width: 100%;
+  }
+  #Dashboard .DashboardMain .SearchDateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #Dashboard .DashboardMain .PaginationBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.breadcrumbs {
+  width: 100%;
+  font-family: myFont1;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.breadcrumbs ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumbs ul li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+.breadcrumbs ul li .breadcrumb-clickable {
+  color: var(--primaryColor);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.breadcrumbs ul li .breadcrumb-clickable:hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+.breadcrumbs ul li a {
+  color: var(--primaryColor);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.breadcrumbs ul li a:hover {
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+.breadcrumbs ul li span {
+  color: #000;
+}
+.breadcrumbs ul li .breadcrumb-icon {
+  margin: 0 6px;
+  font-size: 12px;
+  color: #000;
+}
+
+.success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.success-popup .success-popup-inner {
+  position: relative;
+  background: #fff;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  padding: 20px 30px;
+  min-width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: slideInRight 0.4s ease forwards;
+}
+.success-popup .success-popup-inner .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+.success-popup .success-popup-inner .close-btn:hover {
+  color: #000;
+}
+.success-popup .success-popup-inner .success-icon {
+  font-size: 40px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+.success-popup .success-popup-inner .success-text {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.delete-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.delete-popup {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 0.3s ease forwards;
+}
+.delete-popup .delete-icon {
+  font-size: 50px;
+  color: #f44336;
+  margin-bottom: 15px;
+}
+.delete-popup .delete-text {
+  font-size: 17px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.delete-popup .button-group {
+  display: flex;
+  justify-content: space-around;
+}
+.delete-popup .button-group button {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.delete-popup .button-group .yes-btn {
+  background: #f44336;
+  color: #fff;
+}
+.delete-popup .button-group .yes-btn:hover {
+  background: #d32f2f;
+}
+.delete-popup .button-group .no-btn {
+  background: #e0e0e0;
+}
+.delete-popup .button-group .no-btn:hover {
+  background: #bdbdbd;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#StaffManagement {
+  width: 100%;
+}
+#StaffManagement .StaffManagementMain {
+  width: 100%;
+}
+#StaffManagement .StaffManagementMain .StaffManagementBtnBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#StaffManagement .StaffManagementMain .StaffManagementBtnBox button {
+  width: 200px;
+  background: var(--primaryColor);
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#StaffManagement .StaffManagementMain .TableBox {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchDateFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox {
+  width: 250px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox .SearchIcon {
+  color: #000;
+  font-size: 18px;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  width: 100%;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover {
+  background: var(--primaryColor);
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover svg {
+  color: #fff;
+}
+#StaffManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox svg {
+  color: #000;
+  font-size: 18px;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox,
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox p,
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow,
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow input,
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+}
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow svg,
+#StaffManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow svg {
+  color: #000;
+}
+#StaffManagement .StaffManagementMain .TableBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#StaffManagement .StaffManagementMain .TableBox table th,
+#StaffManagement .StaffManagementMain .TableBox table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  border-bottom: 1px solid #eee;
+}
+#StaffManagement .StaffManagementMain .TableBox table th {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#StaffManagement .StaffManagementMain .TableBox table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#StaffManagement .StaffManagementMain .TableBox table .ActionIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox table .ActionIcons .edit {
+  color: green;
+  cursor: pointer;
+}
+#StaffManagement .StaffManagementMain .TableBox table .ActionIcons .delete {
+  color: red;
+  cursor: pointer;
+}
+#StaffManagement .StaffManagementMain .TableBox table .ActionIcons .view {
+  color: blue;
+  cursor: pointer;
+}
+#StaffManagement .StaffManagementMain .TableBox table .NoDataRow td {
+  text-align: center;
+}
+#StaffManagement .StaffManagementMain .TableBox table .NoDataBox {
+  padding: 20px 0;
+}
+#StaffManagement .StaffManagementMain .TableBox table .NoDataBox img {
+  width: 250px;
+  height: 250px;
+}
+#StaffManagement .StaffManagementMain .TableBox table .NoDataBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  font-family: myFont1;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox p {
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount svg {
+  color: #000;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 80px;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span:hover, #StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span.active {
+  color: var(--primaryColor);
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount button {
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#StaffManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  #StaffManagement .DashboardMain .DashboardBox .Box {
+    width: calc(50% - 10px);
+  }
+  #StaffManagement .DashboardMain .SearchBoxFilter .SearchBox {
+    width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  #StaffManagement .DashboardMain .DashboardBox .Box {
+    width: 100%;
+  }
+  #StaffManagement .DashboardMain .SearchDateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #StaffManagement .DashboardMain .PaginationBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#AddStaff {
+  width: 100%;
+}
+#AddStaff .AddStaffMain {
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 15px;
+}
+#AddStaff .AddStaffMain .FormGroupBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup {
+  width: 33.3333333333%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup input,
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup input:focus,
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup input.error,
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddStaff .AddStaffMain .FormGroupBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup {
+  width: 33.3333333333%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup input,
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup input:focus,
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup input.error,
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddStaff .AddStaffMain .FormGroupContactBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddStaff .AddStaffMain .FormBtnBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#AddStaff .AddStaffMain .FormBtnBox button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddStaff .AddStaffMain .FormBtnBox .primary-btn {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddStaff .AddStaffMain .FormBtnBox .cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+#AddStaff .AddStaffMain .FormBtnBox button:hover {
+  opacity: 0.9;
+}
+
+#SiteManagement {
+  width: 100%;
+}
+#SiteManagement .StaffManagementMain {
+  width: 100%;
+}
+#SiteManagement .StaffManagementMain .StaffManagementBtnBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#SiteManagement .StaffManagementMain .StaffManagementBtnBox button {
+  width: 200px;
+  background: var(--primaryColor);
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#SiteManagement .StaffManagementMain .TableBox {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchDateFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox {
+  width: 250px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox .SearchIcon {
+  color: #000;
+  font-size: 18px;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  width: 100%;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover {
+  background: var(--primaryColor);
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover svg {
+  color: #fff;
+}
+#SiteManagement .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox svg {
+  color: #000;
+  font-size: 18px;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox,
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox p,
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow,
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow input,
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+}
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow svg,
+#SiteManagement .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow svg {
+  color: #000;
+}
+#SiteManagement .StaffManagementMain .TableBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#SiteManagement .StaffManagementMain .TableBox table th,
+#SiteManagement .StaffManagementMain .TableBox table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  border-bottom: 1px solid #eee;
+}
+#SiteManagement .StaffManagementMain .TableBox table th {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#SiteManagement .StaffManagementMain .TableBox table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#SiteManagement .StaffManagementMain .TableBox table .ActionIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox table .ActionIcons .edit {
+  color: green;
+  cursor: pointer;
+}
+#SiteManagement .StaffManagementMain .TableBox table .ActionIcons .delete {
+  color: red;
+  cursor: pointer;
+}
+#SiteManagement .StaffManagementMain .TableBox table .ActionIcons .view {
+  color: blue;
+  cursor: pointer;
+}
+#SiteManagement .StaffManagementMain .TableBox table .NoDataRow td {
+  text-align: center;
+}
+#SiteManagement .StaffManagementMain .TableBox table .NoDataBox {
+  padding: 20px 0;
+}
+#SiteManagement .StaffManagementMain .TableBox table .NoDataBox img {
+  width: 250px;
+  height: 250px;
+}
+#SiteManagement .StaffManagementMain .TableBox table .NoDataBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  font-family: myFont1;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox p {
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount svg {
+  color: #000;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 80px;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span:hover, #SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span.active {
+  color: var(--primaryColor);
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount button {
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteManagement .StaffManagementMain .TableBox .PaginationBox .PaginationCount button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  #SiteManagement .DashboardMain .DashboardBox .Box {
+    width: calc(50% - 10px);
+  }
+  #SiteManagement .DashboardMain .SearchBoxFilter .SearchBox {
+    width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  #SiteManagement .DashboardMain .DashboardBox .Box {
+    width: 100%;
+  }
+  #SiteManagement .DashboardMain .SearchDateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #SiteManagement .DashboardMain .PaginationBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#AddSite {
+  width: 100%;
+}
+#AddSite .AddStaffMain {
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 15px;
+}
+#AddSite .AddStaffMain h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  font-family: myFont1;
+  margin-bottom: 20px;
+}
+#AddSite .AddStaffMain .FormGroupBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup input,
+#AddSite .AddStaffMain .FormGroupBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup input:focus,
+#AddSite .AddStaffMain .FormGroupBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup input.error,
+#AddSite .AddStaffMain .FormGroupBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddSite .AddStaffMain .FormGroupBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup input,
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup input:focus,
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup input.error,
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .FormSubGroupBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarentyTitle p {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 18px;
+  font-family: myFont1;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup {
+  width: calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup input,
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup input:focus,
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup input.error,
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup textarea.error {
+  border-color: red;
+}
+#AddSite .AddStaffMain .FormGroupMainBox .WarentySpanBox .WarrentySpan .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddSite .AddStaffMain .add-row-btn {
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+#AddSite .AddStaffMain .add-row-btn:hover {
+  opacity: 0.9;
+}
+#AddSite .AddStaffMain .FormBtnBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#AddSite .AddStaffMain .FormBtnBox button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddSite .AddStaffMain .FormBtnBox button.primary-btn {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddSite .AddStaffMain .FormBtnBox button.cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+#AddSite .AddStaffMain .FormBtnBox button:hover {
+  opacity: 0.9;
+}
+
+#SiteAsign {
+  width: 100%;
+}
+#SiteAsign .StaffManagementMain {
+  width: 100%;
+}
+#SiteAsign .StaffManagementMain .StaffManagementBtnBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#SiteAsign .StaffManagementMain .StaffManagementBtnBox button {
+  background: var(--primaryColor);
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#SiteAsign .StaffManagementMain .TableBox {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchDateFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox {
+  width: 250px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox .SearchIcon {
+  color: #000;
+  font-size: 18px;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  width: 100%;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover {
+  background: var(--primaryColor);
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover svg {
+  color: #fff;
+}
+#SiteAsign .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox svg {
+  color: #000;
+  font-size: 18px;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox,
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox p,
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow,
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow input,
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+}
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow svg,
+#SiteAsign .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow svg {
+  color: #000;
+}
+#SiteAsign .StaffManagementMain .TableBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#SiteAsign .StaffManagementMain .TableBox table th,
+#SiteAsign .StaffManagementMain .TableBox table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  border-bottom: 1px solid #eee;
+}
+#SiteAsign .StaffManagementMain .TableBox table th {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#SiteAsign .StaffManagementMain .TableBox table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#SiteAsign .StaffManagementMain .TableBox table .ActionIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox table .ActionIcons .edit {
+  color: green;
+  cursor: pointer;
+}
+#SiteAsign .StaffManagementMain .TableBox table .ActionIcons .delete {
+  color: red;
+  cursor: pointer;
+}
+#SiteAsign .StaffManagementMain .TableBox table .ActionIcons .view {
+  color: blue;
+  cursor: pointer;
+}
+#SiteAsign .StaffManagementMain .TableBox table .NoDataRow td {
+  text-align: center;
+}
+#SiteAsign .StaffManagementMain .TableBox table .NoDataBox {
+  padding: 20px 0;
+}
+#SiteAsign .StaffManagementMain .TableBox table .NoDataBox img {
+  width: 250px;
+  height: 250px;
+}
+#SiteAsign .StaffManagementMain .TableBox table .NoDataBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  font-family: myFont1;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox p {
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount svg {
+  color: #000;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 80px;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span:hover, #SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span.active {
+  color: var(--primaryColor);
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount button {
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#SiteAsign .StaffManagementMain .TableBox .PaginationBox .PaginationCount button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  #SiteAsign .DashboardMain .DashboardBox .Box {
+    width: calc(50% - 10px);
+  }
+  #SiteAsign .DashboardMain .SearchBoxFilter .SearchBox {
+    width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  #SiteAsign .DashboardMain .DashboardBox .Box {
+    width: 100%;
+  }
+  #SiteAsign .DashboardMain .SearchDateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #SiteAsign .DashboardMain .PaginationBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#AddSiteAssign {
+  width: 100%;
+}
+#AddSiteAssign .AddStaffMain {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=date],
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=text] {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  width: 100%;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=date].error,
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=text].error {
+  border-color: red;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=date]:focus,
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup input[type=text]:focus {
+  border-color: var(--primaryColor);
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown.error {
+  border-color: red;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  max-height: 220px;
+  overflow-y: auto;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu.no-search .dropdown-search {
+  display: none;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu .dropdown-search {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu .dropdown-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu .dropdown-search .close-icon {
+  color: var(--primaryColor);
+  cursor: pointer;
+  margin-left: 5px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li .check-icon {
+  margin-left: auto;
+  color: #fff;
+  background: var(--primaryColor);
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 10px;
+  display: none;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li.selected {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li.selected .check-icon {
+  display: inline;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .selected-box {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .selected-box span {
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+#AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddSiteAssign .AddStaffMain .FormBtnBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+#AddSiteAssign .AddStaffMain .FormBtnBox button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+#AddSiteAssign .AddStaffMain .FormBtnBox button.primary-btn {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddSiteAssign .AddStaffMain .FormBtnBox button.cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+#AddSiteAssign .AddStaffMain .FormBtnBox button:hover {
+  opacity: 0.9;
+}
+
+#Category {
+  width: 100%;
+}
+#Category .StaffManagementMain {
+  width: 100%;
+}
+#Category .StaffManagementMain .StaffManagementBtnBox {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#Category .StaffManagementMain .StaffManagementBtnBox button {
+  width: 200px;
+  background: var(--primaryColor);
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#Category .StaffManagementMain .TableBox {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+}
+#Category .StaffManagementMain .TableBox .SearchDateFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox {
+  width: 250px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox .SearchIcon {
+  color: #000;
+  font-size: 18px;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .SearchBox input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  width: 100%;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover {
+  background: var(--primaryColor);
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox:hover svg {
+  color: #fff;
+}
+#Category .StaffManagementMain .TableBox .SearchBoxFilter .FilterIconBox svg {
+  color: #000;
+  font-size: 18px;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox,
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox p,
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow,
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow input,
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+}
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateFromBox .DateBoxShow svg,
+#Category .StaffManagementMain .TableBox .DateFilterBox .DateRangeBox .DateToBox .DateBoxShow svg {
+  color: #000;
+}
+#Category .StaffManagementMain .TableBox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#Category .StaffManagementMain .TableBox table th,
+#Category .StaffManagementMain .TableBox table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  font-family: myFont1;
+  border-bottom: 1px solid #eee;
+}
+#Category .StaffManagementMain .TableBox table th {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#Category .StaffManagementMain .TableBox table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+#Category .StaffManagementMain .TableBox table .ActionIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Category .StaffManagementMain .TableBox table .ActionIcons .edit {
+  color: green;
+  cursor: pointer;
+}
+#Category .StaffManagementMain .TableBox table .ActionIcons .delete {
+  color: red;
+  cursor: pointer;
+}
+#Category .StaffManagementMain .TableBox table .ActionIcons .view {
+  color: blue;
+  cursor: pointer;
+}
+#Category .StaffManagementMain .TableBox table .NoDataRow td {
+  text-align: center;
+}
+#Category .StaffManagementMain .TableBox table .NoDataBox {
+  padding: 20px 0;
+}
+#Category .StaffManagementMain .TableBox table .NoDataBox img {
+  width: 250px;
+  height: 250px;
+}
+#Category .StaffManagementMain .TableBox table .NoDataBox p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #777;
+  font-family: myFont1;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox p {
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  font-weight: 500;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .ShowResultCount svg {
+  color: #000;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 80px;
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  overflow: hidden;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #000;
+  font-family: myFont1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .ShowResultBox .DropdownMenu p:hover {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span:hover, #Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount .PaginationNumber span.active {
+  color: var(--primaryColor);
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount button {
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#Category .StaffManagementMain .TableBox .PaginationBox .PaginationCount button:hover {
+  opacity: 0.9;
+}
+@media (max-width: 1024px) {
+  #Category .DashboardMain .DashboardBox .Box {
+    width: calc(50% - 10px);
+  }
+  #Category .DashboardMain .SearchBoxFilter .SearchBox {
+    width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  #Category .DashboardMain .DashboardBox .Box {
+    width: 100%;
+  }
+  #Category .DashboardMain .SearchDateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #Category .DashboardMain .PaginationBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#AddCategory {
+  width: 100%;
+}
+#AddCategory .AddStaffMain {
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 15px;
+}
+#AddCategory .AddStaffMain .FormGroupBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup {
+  width: 33.3333333333%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup input,
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  outline: none;
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup input:focus,
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup textarea:focus {
+  border-color: var(--primaryColor);
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup input.error,
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup textarea.error {
+  border-color: red;
+}
+#AddCategory .AddStaffMain .FormGroupBox .FormGroup .error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 3px;
+}
+#AddCategory .AddStaffMain .FormBtnBox {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#AddCategory .AddStaffMain .FormBtnBox button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: myFont1;
+}
+#AddCategory .AddStaffMain .FormBtnBox button.primary-btn {
+  background: var(--primaryColor);
+  color: #fff;
+}
+#AddCategory .AddStaffMain .FormBtnBox button.cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+#AddCategory .AddStaffMain .FormBtnBox button:hover {
+  opacity: 0.9;
+}/*# sourceMappingURL=style.css.map */

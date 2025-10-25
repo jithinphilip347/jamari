@@ -1,0 +1,3084 @@
+#LeftSideNav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    z-index: 1000;
+    background: #fff;
+    transition: width 0.3s ease;
+    .LeftSideNavMenuBox {
+        height: 100vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .LeftSideNavTopCenterBox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            .LeftSideNavTop {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                border-bottom: 1px solid #ddd;
+
+                .Logo {
+                    width: 150px;
+                    height: 100px;
+                    transition: all 0.3s ease;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .leftSideNavCenter {
+                width: 100%;
+
+                .LeftSideNavMenu {
+                    width: 100%;
+                    padding: 0 20px;
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 500;
+                        font-family: myFont1;
+                        text-transform: uppercase;
+                        color: #555;
+                        transition: opacity 0.3s ease;
+                    }
+                }
+
+                ul {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 10px 15px;
+                    list-style: none;
+                    gap: 5px;
+
+                    li {
+                        width: 100%;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            padding: 10px 15px;
+                            border-radius: 8px;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                            color: #000;
+
+                            svg {
+                                font-size: 20px;
+                                transition: color 0.3s ease;
+                            }
+
+                            p {
+                                font-size: 15px;
+                                font-weight: 500;
+                                font-family: myFont1;
+                                transition: opacity 0.3s ease;
+                            }
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+
+                                svg,
+                                p {
+                                    color: #fff;
+                                }
+                            }
+
+                            &.active {
+                                background: var(--primaryColor);
+                                color: #fff;
+
+                                svg,
+                                p {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .LeftSideNavBottomBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 15px;
+            border-top: 1px solid #ddd;
+
+            ul {
+                width: 100%;
+
+                li {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 10px 15px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    svg {
+                        font-size: 20px;
+                        color: #000;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        color: #000;
+                        font-weight: 500;
+                        font-family: myFont1;
+                    }
+
+                    &:hover {
+                        background: var(--primaryColor);
+
+                        svg,
+                        p {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapsed {
+        width: 80px;
+
+        .LeftSideNavMenuBox {
+            align-items: center;
+
+            .LeftSideNavTopCenterBox {
+                .LeftSideNavTop {
+                    .Logo {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                .LeftSideNavMenu p {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                ul {
+                    padding: 10px;
+
+                    li {
+                        justify-content: center;
+                        gap: 0;
+                        // padding: 12px 0;
+                        a {
+                            justify-content: center;
+                            gap: 0;
+                            padding: 12px 0;
+
+                            p {
+                                //   display: none;
+                                opacity: 0;
+                                max-width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .LeftSideNavBottomBox {
+                justify-content: center;
+                padding: 15px 0;
+
+                ul li {
+                    justify-content: center;
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: all 0.3s ease;
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 280px;
+        transition: margin-left 0.3s ease;
+    }
+
+    .content-area {
+        margin: 20px;
+    }
+
+    &.collapsed {
+        .main-content {
+            margin-left: 80px;
+        }
+    }
+}
+
+#Nav {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+
+    .NavMain {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .ProfileSideNavBox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .ToggleMenuBox {
+                width: 38px;
+                height: 38px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                svg {
+                    font-size: 22px;
+                    color: #333;
+                    transition:
+                        transform 0.3s ease,
+                        color 0.3s ease;
+                }
+
+                &:hover {
+                    background: var(--primaryColor);
+
+                    svg {
+                        color: #fff;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .SideNavPageNameBox {
+                p {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    letter-spacing: 0.3px;
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+
+        /* Right side: icons + profile */
+        .NavProfileBox {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .NotifiSettingBox {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .NotificationBox,
+                .SettingsBox {
+                    width: 35px;
+                    height: 35px;
+                    border: 1px solid #555;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    svg {
+                        color: #555;
+                        font-size: 18px;
+                    }
+
+                    &:hover {
+                        background: var(--primaryColor);
+
+                        svg {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .ProfileImgNameBox {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                .ProfileImgBox {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .NameBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #222;
+                        font-family: myFont1;
+                    }
+
+                    svg {
+                        font-size: 20px;
+                        color: #222;
+                        transition: transform 0.3s ease;
+                    }
+                }
+
+                &:hover .NameBox svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
+#Dashboard {
+    width: 100%;
+    // padding: 20px;
+
+    .DashboardMain {
+        width: 100%;
+        .DashboardBox {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+
+
+            .Box {
+                width: calc(100% / 3 - 10px);
+                background: #fff;
+                padding: 15px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+                // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+
+                // &:hover {
+                //     transform: translateY(-5px);
+                //     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                // }
+
+                .IconBox {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 8px;
+                    background: #d1f5e2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        color: var(--primaryColor);
+                        font-size: 22px;
+                    }
+                }
+
+                .TitleBox {
+                    p {
+                        font-size: 16px;
+                        font-family: myFont1;
+                        font-weight: 500;
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        .TableBox {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            .SearchDateFilter {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .SearchBoxFilter {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .SearchBox {
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 6px 12px;
+                    border-radius: 30px;
+
+                    .SearchIcon {
+                        color: #000;
+                        font-size: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000;
+                        font-family: myFont1;
+                        width: 100%;
+                    }
+                }
+
+                .FilterIconBox {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: var(--primaryColor);
+                        svg {
+                            color: #fff;
+                        }
+                    }
+
+                    svg {
+                        color: #000;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .DateFilterBox {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .DateRangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .DateFromBox,
+                    .DateToBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            font-family: myFont1;
+                        }
+
+                        .DateBoxShow {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                color: #000;
+                                font-family: myFont1;
+                            }
+
+                            svg {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border-radius: 10px 10px 0px 0px;
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    border-bottom: 1px solid #eee;
+                }
+
+                th {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
+
+                .ActionIcons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .edit {
+                        color: green;
+                        cursor: pointer;
+                    }
+
+                    .delete {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    .view {
+                        color: blue;
+                        cursor: pointer;
+                    }
+                }
+
+                .NoDataRow td {
+                    text-align: center;
+                }
+
+                .NoDataBox {
+                    padding: 20px 0;
+                    img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #777;
+                        font-family: myFont1;
+                    }
+                }
+            }
+
+            .PaginationBox {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .ShowResultBox {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    p {
+                        font-size: 14px;
+                        color: #000;
+                        font-family: myFont1;
+                        font-weight: 500;
+                    }
+
+                    .ShowResultCount {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+
+                        svg {
+                            color: #000;
+                        }
+                    }
+                    .DropdownMenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 80px;
+                        margin-top: 5px;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 80px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 10;
+                        overflow: hidden;
+
+                        p {
+                            margin: 0;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            color: #000;
+                            font-family: myFont1;
+                            cursor: pointer;
+                            transition: background 0.2s;
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .PaginationCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .PaginationNumber {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            cursor: pointer;
+                            transition: 0.3s;
+
+                            &:hover,
+                            &.active {
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        outline: none;
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 6px 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            .SearchBoxFilter {
+                .SearchBox {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: 100%;
+                }
+            }
+
+            .SearchDateFilter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .PaginationBox {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+.breadcrumbs {
+    width: 100%;
+    font-family: myFont1;
+    padding: 12px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 20px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+
+            .breadcrumb-clickable {
+                color: var(--primaryColor);
+                font-weight: 500;
+                cursor: pointer;
+                transition: color 0.2s ease;
+                &:hover {
+                    color: var(--primaryColor);
+                    text-decoration: underline;
+                }
+            }
+
+            a {
+                color: var(--primaryColor);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: var(--primaryColor);
+                    text-decoration: underline;
+                }
+            }
+
+            span {
+                color: #000;
+            }
+
+            .breadcrumb-icon {
+                margin: 0 6px;
+                font-size: 12px;
+                color: #000;
+            }
+        }
+    }
+}
+
+.success-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeIn 0.3s ease-in-out;
+
+    .success-popup-inner {
+        position: relative;
+        background: #fff;
+        border: 2px solid #4caf50;
+        border-radius: 10px;
+        padding: 20px 30px;
+        min-width: 250px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        animation: slideInRight 0.4s ease forwards;
+
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        .success-icon {
+            font-size: 40px;
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+
+        .success-text {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.delete-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.delete-popup {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: zoomIn 0.3s ease forwards;
+
+    .delete-icon {
+        font-size: 50px;
+        color: #f44336;
+        margin-bottom: 15px;
+    }
+
+    .delete-text {
+        font-size: 17px;
+        color: #333;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            padding: 8px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .yes-btn {
+            background: #f44336;
+            color: #fff;
+
+            &:hover {
+                background: #d32f2f;
+            }
+        }
+
+        .no-btn {
+            background: #e0e0e0;
+
+            &:hover {
+                background: #bdbdbd;
+            }
+        }
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#StaffManagement {
+    width: 100%;
+    // padding: 20px;
+
+    .StaffManagementMain {
+        width: 100%;
+
+        .StaffManagementBtnBox {
+            width: 100%;
+            // background: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            // border-radius:  15px 15px 0px 0px ;
+            button {
+                width: 200px;
+                background: var(--primaryColor);
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        .TableBox {
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            // margin-top: 20px;
+            // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            .SearchDateFilter {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .SearchBoxFilter {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .SearchBox {
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 6px 12px;
+                    border-radius: 30px;
+
+                    .SearchIcon {
+                        color: #000;
+                        font-size: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000;
+                        font-family: myFont1;
+                        width: 100%;
+                    }
+                }
+
+                .FilterIconBox {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: var(--primaryColor);
+                        svg {
+                            color: #fff;
+                        }
+                    }
+
+                    svg {
+                        color: #000;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .DateFilterBox {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .DateRangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .DateFromBox,
+                    .DateToBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            font-family: myFont1;
+                        }
+
+                        .DateBoxShow {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                color: #000;
+                                font-family: myFont1;
+                            }
+
+                            svg {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    border-bottom: 1px solid #eee;
+                }
+
+                th {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
+
+                .ActionIcons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .edit {
+                        color: green;
+                        cursor: pointer;
+                    }
+
+                    .delete {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    .view {
+                        color: blue;
+                        cursor: pointer;
+                    }
+                }
+
+                .NoDataRow td {
+                    text-align: center;
+                }
+
+                .NoDataBox {
+                    padding: 20px 0;
+                    img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #777;
+                        font-family: myFont1;
+                    }
+                }
+            }
+
+            .PaginationBox {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .ShowResultBox {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    p {
+                        font-size: 14px;
+                        color: #000;
+                        font-family: myFont1;
+                        font-weight: 500;
+                    }
+
+                    .ShowResultCount {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+
+                        svg {
+                            color: #000;
+                        }
+                    }
+                    .DropdownMenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 80px;
+                        margin-top: 5px;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 80px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 10;
+                        overflow: hidden;
+
+                        p {
+                            margin: 0;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            color: #000;
+                            font-family: myFont1;
+                            cursor: pointer;
+                            transition: background 0.2s;
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .PaginationCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .PaginationNumber {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            cursor: pointer;
+                            transition: 0.3s;
+
+                            &:hover,
+                            &.active {
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        outline: none;
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 6px 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            .SearchBoxFilter {
+                .SearchBox {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: 100%;
+                }
+            }
+
+            .SearchDateFilter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .PaginationBox {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+#AddStaff {
+    width: 100%;
+    .AddStaffMain {
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        border-radius: 15px;
+        .FormGroupBox {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            .FormGroup {
+                width: calc(100% / 3);
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    color: #000;
+                    font-size: 15px;
+                    font-family: myFont1;
+                }
+                input,
+                textarea {
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    font-size: 15px;
+                    outline: none;
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+                    &.error {
+                        border-color: red;
+                    }
+                }
+                .error-msg {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
+        }
+        .FormGroupContactBox {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            .FormGroup {
+                width: calc(100% / 3);
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    color: #000;
+                    font-size: 15px;
+                    font-family: myFont1;
+                }
+
+                input,
+                textarea {
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    font-size: 15px;
+                    outline: none;
+
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+
+                    &.error {
+                        border-color: red;
+                    }
+                }
+
+                .error-msg {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        .FormBtnBox {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            button {
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                font-weight: 500;
+                font-size: 15px;
+                font-family: myFont1;
+            }
+            .primary-btn {
+                background: var(--primaryColor);
+                color: #fff;
+            }
+            .cancel-btn {
+                background: #6c757d;
+                color: #fff;
+            }
+            button:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+#SiteManagement {
+    width: 100%;
+    // padding: 20px;
+
+    .StaffManagementMain {
+        width: 100%;
+
+        .StaffManagementBtnBox {
+            width: 100%;
+            // background: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            // border-radius:  15px 15px 0px 0px ;
+            button {
+                width: 200px;
+                background: var(--primaryColor);
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        .TableBox {
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            // margin-top: 20px;
+            // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            .SearchDateFilter {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .SearchBoxFilter {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .SearchBox {
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 6px 12px;
+                    border-radius: 30px;
+
+                    .SearchIcon {
+                        color: #000;
+                        font-size: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000;
+                        font-family: myFont1;
+                        width: 100%;
+                    }
+                }
+
+                .FilterIconBox {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: var(--primaryColor);
+                        svg {
+                            color: #fff;
+                        }
+                    }
+
+                    svg {
+                        color: #000;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .DateFilterBox {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .DateRangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .DateFromBox,
+                    .DateToBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            font-family: myFont1;
+                        }
+
+                        .DateBoxShow {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                color: #000;
+                                font-family: myFont1;
+                            }
+
+                            svg {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    border-bottom: 1px solid #eee;
+                }
+
+                th {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
+
+                .ActionIcons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .edit {
+                        color: green;
+                        cursor: pointer;
+                    }
+
+                    .delete {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    .view {
+                        color: blue;
+                        cursor: pointer;
+                    }
+                }
+
+                .NoDataRow td {
+                    text-align: center;
+                }
+
+                .NoDataBox {
+                    padding: 20px 0;
+                    img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #777;
+                        font-family: myFont1;
+                    }
+                }
+            }
+
+            .PaginationBox {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .ShowResultBox {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    p {
+                        font-size: 14px;
+                        color: #000;
+                        font-family: myFont1;
+                        font-weight: 500;
+                    }
+
+                    .ShowResultCount {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+
+                        svg {
+                            color: #000;
+                        }
+                    }
+                    .DropdownMenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 80px;
+                        margin-top: 5px;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 80px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 10;
+                        overflow: hidden;
+
+                        p {
+                            margin: 0;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            color: #000;
+                            font-family: myFont1;
+                            cursor: pointer;
+                            transition: background 0.2s;
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .PaginationCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .PaginationNumber {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            cursor: pointer;
+                            transition: 0.3s;
+
+                            &:hover,
+                            &.active {
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        outline: none;
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 6px 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            .SearchBoxFilter {
+                .SearchBox {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: 100%;
+                }
+            }
+
+            .SearchDateFilter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .PaginationBox {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+#AddSite {
+    width: 100%;
+    .AddStaffMain {
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        border-radius: 15px;
+
+        h3 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #000;
+            font-weight: 500;
+            font-family: myFont1;
+            margin-bottom: 20px;
+        }
+
+        .FormGroupBox {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .FormGroup {
+                flex: 1 1 200px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    color: #000;
+                    font-size: 15px;
+                    font-family: myFont1;
+                }
+                input,
+                textarea {
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    font-size: 15px;
+                    outline: none;
+
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+
+                    &.error {
+                        border-color: red;
+                    }
+                }
+
+                .error-msg {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
+        }
+        .FormGroupMainBox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .FormSubGroupBox {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                .FormGroup {
+                    flex: 1 1 200px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 15px;
+                    label {
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                        color: #000;
+                        font-size: 15px;
+                        font-family: myFont1;
+                    }
+                    input,
+                    textarea {
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        padding: 8px 10px;
+                        font-size: 15px;
+                        outline: none;
+
+                        &:focus {
+                            border-color: var(--primaryColor);
+                        }
+
+                        &.error {
+                            border-color: red;
+                        }
+                    }
+
+                    .error-msg {
+                        color: red;
+                        font-size: 13px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+            .WarentySpanBox {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                .WarentyTitle {
+                    p {
+                        font-weight: 500;
+                        margin-bottom: 5px;
+                        color: #000;
+                        font-size: 18px;
+                        font-family: myFont1;
+                    }
+                }
+                .WarrentySpan {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    .FormGroup {
+                        width: calc(100% / 2 - 8px);
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 15px;
+                        label {
+                            font-weight: 500;
+                            margin-bottom: 5px;
+                            color: #000;
+                            font-size: 15px;
+                            font-family: myFont1;
+                        }
+                        input,
+                        textarea {
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            padding: 8px 10px;
+                            font-size: 15px;
+                            outline: none;
+
+                            &:focus {
+                                border-color: var(--primaryColor);
+                            }
+
+                            &.error {
+                                border-color: red;
+                            }
+                        }
+
+                        .error-msg {
+                            color: red;
+                            font-size: 13px;
+                            margin-top: 3px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .add-row-btn {
+            background: var(--primaryColor);
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 15px;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        .FormBtnBox {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+
+            button {
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                font-weight: 500;
+                font-size: 15px;
+                font-family: myFont1;
+
+                &.primary-btn {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                &.cancel-btn {
+                    background: #6c757d;
+                    color: #fff;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+#SiteAsign {
+    width: 100%;
+    // padding: 20px;
+
+    .StaffManagementMain {
+        width: 100%;
+
+        .StaffManagementBtnBox {
+            width: 100%;
+            // background: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            // border-radius:  15px 15px 0px 0px ;
+            button {
+                // width: 200px;
+                background: var(--primaryColor);
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        .TableBox {
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            // margin-top: 20px;
+            // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            .SearchDateFilter {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .SearchBoxFilter {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .SearchBox {
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 6px 12px;
+                    border-radius: 30px;
+
+                    .SearchIcon {
+                        color: #000;
+                        font-size: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000;
+                        font-family: myFont1;
+                        width: 100%;
+                    }
+                }
+
+                .FilterIconBox {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: var(--primaryColor);
+                        svg {
+                            color: #fff;
+                        }
+                    }
+
+                    svg {
+                        color: #000;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .DateFilterBox {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .DateRangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .DateFromBox,
+                    .DateToBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            font-family: myFont1;
+                        }
+
+                        .DateBoxShow {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                color: #000;
+                                font-family: myFont1;
+                            }
+
+                            svg {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    border-bottom: 1px solid #eee;
+                }
+
+                th {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
+
+                .ActionIcons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .edit {
+                        color: green;
+                        cursor: pointer;
+                    }
+
+                    .delete {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    .view {
+                        color: blue;
+                        cursor: pointer;
+                    }
+                }
+
+                .NoDataRow td {
+                    text-align: center;
+                }
+
+                .NoDataBox {
+                    padding: 20px 0;
+                    img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #777;
+                        font-family: myFont1;
+                    }
+                }
+            }
+
+            .PaginationBox {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .ShowResultBox {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    p {
+                        font-size: 14px;
+                        color: #000;
+                        font-family: myFont1;
+                        font-weight: 500;
+                    }
+
+                    .ShowResultCount {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+
+                        svg {
+                            color: #000;
+                        }
+                    }
+                    .DropdownMenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 80px;
+                        margin-top: 5px;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 80px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 10;
+                        overflow: hidden;
+
+                        p {
+                            margin: 0;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            color: #000;
+                            font-family: myFont1;
+                            cursor: pointer;
+                            transition: background 0.2s;
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .PaginationCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .PaginationNumber {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            cursor: pointer;
+                            transition: 0.3s;
+
+                            &:hover,
+                            &.active {
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        outline: none;
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 6px 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            .SearchBoxFilter {
+                .SearchBox {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: 100%;
+                }
+            }
+
+            .SearchDateFilter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .PaginationBox {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+#AddSiteAssign {
+    width: 100%;
+
+    .AddStaffMain {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+
+        .FormGroupBox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .FormGroup {
+                flex: 1 1 200px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                      input[type="date"],
+                        input[type="text"] {
+                            border: 1px solid #ccc;
+                            border-radius: 6px;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            outline: none;
+                            transition: 0.3s;
+                            width: 100%;
+
+                            &.error {
+                            border-color: red;
+                            }
+
+                            &:focus {
+                            border-color: var(--primaryColor);
+                            }
+                        }
+                        
+                label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    color: #000;
+                }
+                
+                 textarea {
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    font-size: 15px;
+                    outline: none;
+
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+
+                    &.error {
+                        border-color: red;
+                    }
+                }
+                .custom-dropdown {
+                    position: relative;
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &.error {
+                        border-color: red;
+                    }
+
+                    .dropdown-selected {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                    }
+
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        margin-top: 5px;
+                        z-index: 10;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        max-height: 220px;
+                        overflow-y: auto;
+
+                        &.no-search {
+                            .dropdown-search {
+                                display: none;
+                            }
+                        }
+
+                        .dropdown-search {
+                            display: flex;
+                            align-items: center;
+                            padding: 8px;
+                            border-bottom: 1px solid #eee;
+
+                            input {
+                                flex: 1;
+                                border: none;
+                                outline: none;
+                            }
+
+                            .close-icon {
+                                color: var(--primaryColor);
+                                cursor: pointer;
+                                margin-left: 5px;
+                            }
+                        }
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+
+                            li {
+                                padding: 8px 10px;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                                cursor: pointer;
+                                transition: 0.2s;
+
+                                input[type="checkbox"] {
+                                    width: 16px;
+                                    height: 16px;
+                                    accent-color: var(--primaryColor);
+                                    border: 2px solid var(--primaryColor);
+                                }
+
+                                .check-icon {
+                                    margin-left: auto;
+                                    color: #fff;
+                                    background: var(--primaryColor);
+                                    border-radius: 50%;
+                                    padding: 2px;
+                                    font-size: 10px;
+                                    display: none;
+                                }
+
+                                &.selected {
+                                    background: var(--primaryColor);
+                                    color: #fff;
+
+                                    .check-icon {
+                                        display: inline;
+                                    }
+                                }
+
+                                &:hover {
+                                    background: var(--primaryColor);
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .selected-box {
+                    margin-top: 8px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+
+                    span {
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-size: 13px;
+                    }
+                }
+
+                .error-msg {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        .FormBtnBox {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+
+            button {
+                padding: 8px 15px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                font-weight: 500;
+
+                &.primary-btn {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                &.cancel-btn {
+                    background: #6c757d;
+                    color: #fff;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+
+#Category {
+    width: 100%;
+    // padding: 20px;
+
+    .StaffManagementMain {
+        width: 100%;
+
+        .StaffManagementBtnBox {
+            width: 100%;
+            // background: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            // border-radius:  15px 15px 0px 0px ;
+            button {
+                width: 200px;
+                background: var(--primaryColor);
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+        .TableBox {
+            width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            // margin-top: 20px;
+            // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+            .SearchDateFilter {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .SearchBoxFilter {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .SearchBox {
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 6px 12px;
+                    border-radius: 30px;
+
+                    .SearchIcon {
+                        color: #000;
+                        font-size: 18px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #000;
+                        font-family: myFont1;
+                        width: 100%;
+                    }
+                }
+
+                .FilterIconBox {
+                    width: 38px;
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: var(--primaryColor);
+                        svg {
+                            color: #fff;
+                        }
+                    }
+
+                    svg {
+                        color: #000;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .DateFilterBox {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .DateRangeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+
+                    .DateFromBox,
+                    .DateToBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            font-family: myFont1;
+                        }
+
+                        .DateBoxShow {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            padding: 5px 10px;
+
+                            input {
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                color: #000;
+                                font-family: myFont1;
+                            }
+
+                            svg {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #000;
+                    font-family: myFont1;
+                    border-bottom: 1px solid #eee;
+                }
+
+                th {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                tr:nth-child(even) {
+                    background: #f9f9f9;
+                }
+
+                .ActionIcons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .edit {
+                        color: green;
+                        cursor: pointer;
+                    }
+
+                    .delete {
+                        color: red;
+                        cursor: pointer;
+                    }
+
+                    .view {
+                        color: blue;
+                        cursor: pointer;
+                    }
+                }
+
+                .NoDataRow td {
+                    text-align: center;
+                }
+
+                .NoDataBox {
+                    padding: 20px 0;
+                    img {
+                        width: 250px;
+                        height: 250px;
+                    }
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #777;
+                        font-family: myFont1;
+                    }
+                }
+            }
+
+            .PaginationBox {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .ShowResultBox {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+
+                    p {
+                        font-size: 14px;
+                        color: #000;
+                        font-family: myFont1;
+                        font-weight: 500;
+                    }
+
+                    .ShowResultCount {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+                        padding: 5px 10px;
+                        border: 1px solid #555;
+                        border-radius: 5px;
+
+                        svg {
+                            color: #000;
+                        }
+                    }
+                    .DropdownMenu {
+                        position: absolute;
+                        top: 100%;
+                        left: 80px;
+                        margin-top: 5px;
+                        background: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        width: 80px;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                        z-index: 10;
+                        overflow: hidden;
+
+                        p {
+                            margin: 0;
+                            padding: 8px 10px;
+                            font-size: 14px;
+                            color: #000;
+                            font-family: myFont1;
+                            cursor: pointer;
+                            transition: background 0.2s;
+
+                            &:hover {
+                                background: var(--primaryColor);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .PaginationCount {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .PaginationNumber {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+
+                        span {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #000;
+                            cursor: pointer;
+                            transition: 0.3s;
+
+                            &:hover,
+                            &.active {
+                                color: var(--primaryColor);
+                            }
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        outline: none;
+                        background: var(--primaryColor);
+                        color: #fff;
+                        padding: 6px 15px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            .SearchBoxFilter {
+                .SearchBox {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .DashboardMain {
+            .DashboardBox {
+                .Box {
+                    width: 100%;
+                }
+            }
+
+            .SearchDateFilter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .PaginationBox {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+#AddCategory {
+    width: 100%;
+    .AddStaffMain {
+        background: #fff;
+        padding: 20px;
+        width: 100%;
+        border-radius: 15px;
+        .FormGroupBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            .FormGroup {
+                width: calc(100% / 3);
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    color: #000;
+                    font-size: 15px;
+                    font-family: myFont1;
+                }
+
+                input,
+                textarea {
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    padding: 8px 10px;
+                    font-size: 15px;
+                    outline: none;
+
+                    &:focus {
+                        border-color: var(--primaryColor);
+                    }
+
+                    &.error {
+                        border-color: red;
+                    }
+                }
+
+                .error-msg {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 3px;
+                }
+            }
+        }
+        // .FormGroup {
+        //     margin-bottom: 15px;
+        //     display: flex;
+        //     flex-direction: column;
+
+        //     label {
+        //         font-weight: 500;
+        //         margin-bottom: 5px;
+        //         color: #000;
+        //         font-size: 15px;
+        //         font-family: myFont1;
+        //     }
+
+        //     input,
+        //     textarea {
+        //         border: 1px solid #ccc;
+        //         border-radius: 6px;
+        //         padding: 8px 10px;
+        //         font-size: 15px;
+        //         outline: none;
+
+        //         &:focus {
+        //             border-color: var(--primaryColor);
+        //         }
+
+        //         &.error {
+        //             border-color: red;
+        //         }
+        //     }
+
+        //     .error-msg {
+        //         color: red;
+        //         font-size: 13px;
+        //         margin-top: 3px;
+        //     }
+        // }
+
+        .FormBtnBox {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+
+            button {
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                font-weight: 500;
+                font-size: 15px;
+                font-family: myFont1;
+
+                &.primary-btn {
+                    background: var(--primaryColor);
+                    color: #fff;
+                }
+
+                &.cancel-btn {
+                    background: #6c757d;
+                    color: #fff;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
