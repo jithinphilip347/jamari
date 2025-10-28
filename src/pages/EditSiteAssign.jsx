@@ -12,41 +12,76 @@ const EditSiteAssign = () => {
     site: "",
     category: "",
     maintenanceType: "",
-    date: "",
+    inspectionFrequency: "",
+    maintenanceFrequency: "",
+    referenceNo: "",
+    inspectionVisitNo: "",
+    contactType: "",
+    fireSystemType: "",
+    date: new Date().toISOString().split("T")[0],
+    prevDate: "",
     remark: "",
+    emergencyCall: "",
   });
 
   const [errors, setErrors] = useState({});
 
-  const [staffDropdownOpen, setStaffDropdownOpen] = useState(false);
-  const [siteDropdownOpen, setSiteDropdownOpen] = useState(false);
-  const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
-  const [maintenanceDropdownOpen, setMaintenanceDropdownOpen] = useState(false);
+  const [dropdowns, setDropdowns] = useState({
+    staff: false,
+    site: false,
+    category: false,
+    maintenance: false,
+    inspectionFreq: false,
+    maintenanceFreq: false,
+    contactType: false,
+    fireSystem: false,
+  });
 
-  const staffRef = useRef();
-  const siteRef = useRef();
-  const categoryRef = useRef();
-  const maintenanceRef = useRef();
+  const refs = {
+    staff: useRef(),
+    site: useRef(),
+    category: useRef(),
+    maintenance: useRef(),
+    inspectionFreq: useRef(),
+    maintenanceFreq: useRef(),
+    contactType: useRef(),
+    fireSystem: useRef(),
+  };
 
   const staffOptions = ["John Doe", "Jane Smith", "Alice Johnson", "Bob Brown"];
   const siteOptions = ["Site A", "Site B", "Site C"];
   const categoryOptions = ["Inspection", "Emergency", "Maintenance"];
-  const maintenanceOptions = ["Quarterly", "Monthly"];
 
-  const [staffSearch, setStaffSearch] = useState("");
-  const [siteSearch, setSiteSearch] = useState("");
+  const inspectionFrequencyOptions = [
+    "Monthly Inspection",
+    "Quarterly Inspection",
+    "Bi-Annual Inspection",
+    "Annual Inspection",
+  ];
 
-  // Close dropdowns on outside click
+  const maintenanceFrequencyOptions = [
+    "Monthly Maintenance",
+    "Quarterly Maintenance",
+    "Bi-Annual Maintenance",
+    "Annual Maintenance",
+    "On Call Inspection",
+  ];
+
+  const contractTypeOptions = ["Contractual", "Non Contractual"];
+  const fireSystemOptions = [
+    "Fire Fighting System",
+    "Fire Alarm System",
+    "Fire Suppression System",
+    "Other",
+  ];
+
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (staffRef.current && !staffRef.current.contains(e.target))
-        setStaffDropdownOpen(false);
-      if (siteRef.current && !siteRef.current.contains(e.target))
-        setSiteDropdownOpen(false);
-      if (categoryRef.current && !categoryRef.current.contains(e.target))
-        setCategoryDropdownOpen(false);
-      if (maintenanceRef.current && !maintenanceRef.current.contains(e.target))
-        setMaintenanceDropdownOpen(false);
+      Object.keys(refs).forEach((key) => {
+        if (refs[key].current && !refs[key].current.contains(e.target)) {
+          setDropdowns((prev) => ({ ...prev, [key]: false }));
+        }
+      });
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -54,7 +89,7 @@ const EditSiteAssign = () => {
 
   const toggleStaffOption = (option) => {
     const newStaff = formData.staff.includes(option)
-      ? formData.staff.filter((item) => item !== option)
+      ? formData.staff.filter((s) => s !== option)
       : [...formData.staff, option];
     setFormData({ ...formData, staff: newStaff });
   };
@@ -62,14 +97,24 @@ const EditSiteAssign = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newErrors = {};
+
     if (!formData.staff.length)
       newErrors.staff = "Please choose at least one staff";
     if (!formData.site) newErrors.site = "Please choose a site";
     if (!formData.category) newErrors.category = "Please choose a category";
-    if (formData.category === "Maintenance" && !formData.maintenanceType)
-      newErrors.maintenanceType = "Please choose a maintenance type";
-    if (!formData.date) newErrors.date = "Please select a date";
+    if (!formData.date) newErrors.date = "Please select schedule service date";
+
+    if (formData.category === "Maintenance" && !formData.maintenanceFrequency)
+      newErrors.maintenanceFrequency = "Please choose a maintenance frequency";
+
+    if (formData.category === "Inspection" && !formData.inspectionFrequency)
+      newErrors.inspectionFrequency = "Please choose an inspection frequency";
+
+    if (formData.category === "Emergency" && !formData.emergencyCall)
+      newErrors.emergencyCall = "Please enter emergency call details";
+
     if (!formData.remark) newErrors.remark = "Please enter a remark";
+
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
@@ -84,16 +129,7 @@ const EditSiteAssign = () => {
     ];
     localStorage.setItem("siteAssignList", JSON.stringify(updatedList));
 
-    setFormData({
-      staff: [],
-      site: "",
-      category: "",
-      maintenanceType: "",
-      date: "",
-      remark: "",
-    });
-
-    toast.success("schedule edited successfully!");
+    toast.success("Site assigned successfully!");
     setTimeout(() => navigate("/site-assign"), 1500);
   };
 
@@ -103,6 +139,48 @@ const EditSiteAssign = () => {
     { label: "Edit Inspection Schedule" },
   ];
 
+  const renderDropdown = (label, name, options) => (
+    <div className="FormGroup" ref={refs[name]}>
+      <label>{label}</label>
+      <div
+        className={`custom-dropdown ${dropdowns[name] ? "open" : ""} ${
+          errors[name] ? "error" : ""
+        }`}
+        onClick={() =>
+          setDropdowns((prev) => ({ ...prev, [name]: !prev[name] }))
+        }
+      >
+        <div className="dropdown-selected">
+          {formData[name] || ` ${label.toLowerCase()}...`}
+          {dropdowns[name] ? <FaChevronUp /> : <FaChevronDown />}
+        </div>
+
+        {dropdowns[name] && (
+          <div
+            className="dropdown-menu no-search"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul>
+              {options.map((option, idx) => (
+                <li
+                  key={idx}
+                  onClick={() => {
+                    setFormData({ ...formData, [name]: option });
+                    setDropdowns((prev) => ({ ...prev, [name]: false }));
+                  }}
+                  className={formData[name] === option ? "selected" : ""}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      {errors[name] && <p className="error-msg">{errors[name]}</p>}
+    </div>
+  );
+
   return (
     <div id="AddSiteAssign">
       <Toaster position="top-right" reverseOrder={false} />
@@ -111,65 +189,79 @@ const EditSiteAssign = () => {
       <div className="AddStaffMain">
         <form onSubmit={handleSubmit}>
           <div className="FormGroupBox">
-            {/* ---------- STAFF MULTI SELECT ---------- */}
-            <div className="FormGroup" ref={staffRef}>
+            {/* ---------- BASIC DETAILS ---------- */}
+            <div className="FormGroup">
+              <label>Reference No (Optional)</label>
+              <input
+                type="text"
+                placeholder="Enter reference number"
+                value={formData.referenceNo}
+                onChange={(e) =>
+                  setFormData({ ...formData, referenceNo: e.target.value })
+                }
+              />
+            </div>
+
+            <div className="FormGroup">
+              <label>Inspection Visit No</label>
+              <input
+                type="text"
+                placeholder="Enter inspection visit number"
+                value={formData.inspectionVisitNo}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    inspectionVisitNo: e.target.value,
+                  })
+                }
+              />
+            </div>
+
+            {renderDropdown("Contract Type", "contractType", contractTypeOptions)}
+            {renderDropdown("Fire Fighting System", "fireSystemType", fireSystemOptions)}
+
+            {/* ---------- MULTI SELECT STAFF ---------- */}
+            <div className="FormGroup" ref={refs.staff}>
               <label>Choose Staff</label>
               <div
-                className={`custom-dropdown ${staffDropdownOpen ? "open" : ""} ${
+                className={`custom-dropdown ${dropdowns.staff ? "open" : ""} ${
                   errors.staff ? "error" : ""
                 }`}
-                onClick={() => setStaffDropdownOpen((prev) => !prev)}
+                onClick={() =>
+                  setDropdowns((prev) => ({ ...prev, staff: !prev.staff }))
+                }
               >
                 <div className="dropdown-selected">
-                  {formData.staff.length
+                  {formData.staff.length > 0
                     ? formData.staff.join(", ")
-                    : "Select staff..."}
-                  {staffDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+                    : "Choose staff..."}
+                  {dropdowns.staff ? <FaChevronUp /> : <FaChevronDown />}
                 </div>
 
-                {staffDropdownOpen && (
+                {dropdowns.staff && (
                   <div
-                    className="dropdown-menu"
+                    className="dropdown-menu no-search"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="dropdown-search">
-                      <input
-                        type="text"
-                        placeholder="Search staff..."
-                        value={staffSearch}
-                        onChange={(e) => setStaffSearch(e.target.value)}
-                      />
-                      {staffSearch && (
-                        <FaTimes
-                          className="close-icon"
-                          onClick={() => setStaffSearch("")}
-                        />
-                      )}
-                    </div>
                     <ul>
-                      {staffOptions
-                        .filter((s) =>
-                          s.toLowerCase().includes(staffSearch.toLowerCase())
-                        )
-                        .map((option, idx) => (
-                          <li
-                            key={idx}
-                            onClick={() => toggleStaffOption(option)}
-                            className={
-                              formData.staff.includes(option) ? "selected" : ""
-                            }
-                          >
-                            <input
-                              type="checkbox"
-                              checked={formData.staff.includes(option)}
-                              readOnly
-                            />
-                            {option}
-                            {formData.staff.includes(option) && (
+                      {staffOptions.map((option, idx) => (
+                        <li
+                          key={idx}
+                          onClick={() => toggleStaffOption(option)}
+                          className={
+                            formData.staff.includes(option) ? "selected" : ""
+                          }
+                        >
+                          <div className="option-with-check">
+                            {formData.staff.includes(option) ? (
                               <FaCheck className="check-icon" />
+                            ) : (
+                              <span className="empty-icon" />
                             )}
-                          </li>
-                        ))}
+                            <span>{option}</span>
+                          </div>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 )}
@@ -177,172 +269,50 @@ const EditSiteAssign = () => {
               {errors.staff && <p className="error-msg">{errors.staff}</p>}
             </div>
 
-            {/* ---------- SITE SINGLE SELECT ---------- */}
-            <div className="FormGroup" ref={siteRef}>
-              <label>Choose Site</label>
-              <div
-                className={`custom-dropdown ${siteDropdownOpen ? "open" : ""} ${
-                  errors.site ? "error" : ""
-                }`}
-                onClick={() => setSiteDropdownOpen((prev) => !prev)}
-              >
-                <div className="dropdown-selected">
-                  {formData.site || "Select site..."}
-                  {siteDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
-                </div>
+            {/* ---------- OTHER DROPDOWNS ---------- */}
+            {renderDropdown("Choose Site", "site", siteOptions)}
+            {renderDropdown("Choose Category", "category", categoryOptions)}
 
-                {siteDropdownOpen && (
-                  <div
-                    className="dropdown-menu"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="dropdown-search">
-                      <input
-                        type="text"
-                        placeholder="Search site..."
-                        value={siteSearch}
-                        onChange={(e) => setSiteSearch(e.target.value)}
-                      />
-                      {siteSearch && (
-                        <FaTimes
-                          className="close-icon"
-                          onClick={() => setSiteSearch("")}
-                        />
-                      )}
-                    </div>
-                    <ul>
-                      {siteOptions
-                        .filter((s) =>
-                          s.toLowerCase().includes(siteSearch.toLowerCase())
-                        )
-                        .map((option, idx) => (
-                          <li
-                            key={idx}
-                            onClick={() => {
-                              setFormData({ ...formData, site: option });
-                              setSiteDropdownOpen(false);
-                            }}
-                            className={
-                              formData.site === option ? "selected" : ""
-                            }
-                          >
-                            {option}
-                          </li>
-                        ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-              {errors.site && <p className="error-msg">{errors.site}</p>}
-            </div>
+            {/* ---------- CONDITIONAL SECTIONS ---------- */}
+            {formData.category === "Inspection" &&
+              renderDropdown(
+                "Inspection Frequency",
+                "inspectionFrequency",
+                inspectionFrequencyOptions
+              )}
 
-            {/* ---------- CATEGORY SINGLE SELECT ---------- */}
-            <div className="FormGroup" ref={categoryRef}>
-              <label>Choose Category</label>
-              <div
-                className={`custom-dropdown ${
-                  categoryDropdownOpen ? "open" : ""
-                } ${errors.category ? "error" : ""}`}
-                onClick={() => setCategoryDropdownOpen((prev) => !prev)}
-              >
-                <div className="dropdown-selected">
-                  {formData.category || "Select category..."}
-                  {categoryDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
-                </div>
+            {formData.category === "Maintenance" &&
+              renderDropdown(
+                "Maintenance Frequency",
+                "maintenanceFrequency",
+                maintenanceFrequencyOptions
+              )}
 
-                {categoryDropdownOpen && (
-                  <div
-                    className="dropdown-menu no-search"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ul>
-                      {categoryOptions.map((option, idx) => (
-                        <li
-                          key={idx}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              category: option,
-                              maintenanceType: "",
-                            });
-                            setCategoryDropdownOpen(false);
-                          }}
-                          className={
-                            formData.category === option ? "selected" : ""
-                          }
-                        >
-                          {option}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-              {errors.category && <p className="error-msg">{errors.category}</p>}
-            </div>
-
-            {/* ---------- CONDITIONAL FIELDS ---------- */}
-            {formData.category === "Maintenance" && (
-              <div className="FormGroup" ref={maintenanceRef}>
-                <label>Maintenance Type</label>
-                <div
-                  className={`custom-dropdown ${
-                    maintenanceDropdownOpen ? "open" : ""
-                  } ${errors.maintenanceType ? "error" : ""}`}
-                  onClick={() =>
-                    setMaintenanceDropdownOpen((prev) => !prev)
+            {formData.category === "Emergency" && (
+              <div className="FormGroup">
+                <label>Emergency Call</label>
+                <input
+                  type="text"
+                  placeholder="Enter emergency call details"
+                  value={formData.emergencyCall}
+                  onChange={(e) =>
+                    setFormData({ ...formData, emergencyCall: e.target.value })
                   }
-                >
-                  <div className="dropdown-selected">
-                    {formData.maintenanceType || "Select type..."}
-                    {maintenanceDropdownOpen ? (
-                      <FaChevronUp />
-                    ) : (
-                      <FaChevronDown />
-                    )}
-                  </div>
-
-                  {maintenanceDropdownOpen && (
-                    <div
-                      className="dropdown-menu no-search"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <ul>
-                        {maintenanceOptions.map((option, idx) => (
-                          <li
-                            key={idx}
-                            onClick={() => {
-                              setFormData({
-                                ...formData,
-                                maintenanceType: option,
-                              });
-                              setMaintenanceDropdownOpen(false);
-                            }}
-                            className={
-                              formData.maintenanceType === option
-                                ? "selected"
-                                : ""
-                            }
-                          >
-                            {option}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-                {errors.maintenanceType && (
-                  <p className="error-msg">{errors.maintenanceType}</p>
+                  className={errors.emergencyCall ? "error" : ""}
+                />
+                {errors.emergencyCall && (
+                  <p className="error-msg">{errors.emergencyCall}</p>
                 )}
               </div>
             )}
 
-            {(formData.category === "Maintenance" ||
-              formData.category === "Inspection" ||
+            {/* ---------- DATES & REMARK ---------- */}
+            {(formData.category === "Inspection" ||
+              formData.category === "Maintenance" ||
               formData.category === "Emergency") && (
               <>
                 <div className="FormGroup">
-                  <label>Date</label>
+                  <label>Schedule Service Date</label>
                   <input
                     type="date"
                     value={formData.date}
@@ -355,9 +325,19 @@ const EditSiteAssign = () => {
                 </div>
 
                 <div className="FormGroup">
+                  <label>Previous Inspection Date (Optional)</label>
+                  <input
+                    type="date"
+                    value={formData.prevDate}
+                    onChange={(e) =>
+                      setFormData({ ...formData, prevDate: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div className="FormGroup">
                   <label>Remark</label>
-                  <textarea 
-                    type="text"
+                  <textarea
                     placeholder="Enter remark"
                     value={formData.remark}
                     onChange={(e) =>
@@ -392,3 +372,5 @@ const EditSiteAssign = () => {
 };
 
 export default EditSiteAssign;
+
+

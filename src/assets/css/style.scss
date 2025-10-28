@@ -2425,13 +2425,15 @@
                     font-weight: 500;
                     margin-bottom: 5px;
                     color: #000;
+                    font-size: 14px;
+
                 }
                 
                  textarea {
                     border: 1px solid #ccc;
                     border-radius: 6px;
                     padding: 8px 10px;
-                    font-size: 15px;
+                    font-size: 14px;
                     outline: none;
 
                     &:focus {
@@ -2461,6 +2463,7 @@
                         justify-content: space-between;
                         align-items: center;
                         width: 100%;
+                        font-size: 14px;
                     }
 
                     .dropdown-menu {
@@ -2514,12 +2517,12 @@
                                 gap: 8px;
                                 cursor: pointer;
                                 transition: 0.2s;
-
+                                font-size:14px;
                                 input[type="checkbox"] {
                                     width: 16px;
                                     height: 16px;
                                     accent-color: var(--primaryColor);
-                                    border: 2px solid var(--primaryColor);
+                                    border: 1px solid var(--primaryColor);
                                 }
 
                                 .check-icon {
@@ -2535,7 +2538,7 @@
                                 &.selected {
                                     background: var(--primaryColor);
                                     color: #fff;
-
+                                    font-size:14px;
                                     .check-icon {
                                         display: inline;
                                     }
@@ -2603,6 +2606,75 @@
         }
     }
 }
+
+// #AddSiteAssign {
+//   .AddStaffMain {
+//     .FormGroupBox {
+//       .FormGroup {
+//         input[type="text"] {
+//           border: 1px solid #ccc;
+//           border-radius: 6px;
+//           padding: 8px 10px;
+//           font-size: 14px;
+//           outline: none;
+//           transition: 0.3s;
+//           width: 100%;
+
+//           &.error {
+//             border-color: red;
+//           }
+
+//           &:focus {
+//             border-color: var(--primaryColor);
+//           }
+//         }
+
+//         input[type="date"] {
+//           border: 1px solid #ccc;
+//           border-radius: 6px;
+//           padding: 8px 10px;
+//           font-size: 14px;
+//           outline: none;
+//           width: 100%;
+//           transition: 0.3s;
+
+//           &.error {
+//             border-color: red;
+//           }
+
+//           &:focus {
+//             border-color: var(--primaryColor);
+//           }
+//         }
+
+//         textarea {
+//           border: 1px solid #ccc;
+//           border-radius: 6px;
+//           padding: 8px 10px;
+//           font-size: 15px;
+//           outline: none;
+//           min-height: 80px;
+//           resize: vertical;
+
+//           &:focus {
+//             border-color: var(--primaryColor);
+//           }
+
+//           &.error {
+//             border-color: red;
+//           }
+//         }
+
+//         label {
+//           font-weight: 500;
+//           margin-bottom: 5px;
+//           color: #000;
+//         }
+//       }
+//     }
+//   }
+// }
+
 
 
 #Category {

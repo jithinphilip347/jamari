@@ -2079,12 +2079,13 @@
   font-weight: 500;
   margin-bottom: 5px;
   color: #000;
+  font-size: 14px;
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 8px 10px;
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup textarea:focus {
@@ -2111,6 +2112,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  font-size: 14px;
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu {
   position: absolute;
@@ -2157,12 +2159,13 @@
   gap: 8px;
   cursor: pointer;
   transition: 0.2s;
+  font-size: 14px;
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li input[type=checkbox] {
   width: 16px;
   height: 16px;
   accent-color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
+  border: 1px solid var(--primaryColor);
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li .check-icon {
   margin-left: auto;
@@ -2176,6 +2179,7 @@
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li.selected {
   background: var(--primaryColor);
   color: #fff;
+  font-size: 14px;
 }
 #AddSiteAssign .AddStaffMain .FormGroupBox .FormGroup .custom-dropdown .dropdown-menu ul li.selected .check-icon {
   display: inline;

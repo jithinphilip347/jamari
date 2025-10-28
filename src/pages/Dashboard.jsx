@@ -10,7 +10,7 @@ const Dashboard = () => {
   const boxes = [
     { icon: <RiUser3Line />, title: "Staff Management" },
     { icon: <LuFolderTree />, title: "Site Management" },
-    { icon: <LuClipboardList />, title: "Site Assign" },
+    { icon: <LuClipboardList />, title: "Inspection Schedule" },
     // { icon: <MdCategory />, title: "Category Management" },
   ];
 
